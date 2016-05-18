@@ -1,8 +1,3 @@
-var koa = require('koa');
-var app = koa();
+const app = require('./src/server')
 
-app.use(function *(){
-  this.body = {message: 'Hello World! Koa.js on Google App Engine.'};
-});
-
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 8080)
