@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/svef/api.svef.is#readme",
   "dependencies": {
+    "glob": "^7.0.3",
     "koa": "^1.2.0",
     "koa-router": "^5.4.0"
   }

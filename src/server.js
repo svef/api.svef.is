@@ -1,26 +1,17 @@
+const path = require('path')
 const koa = require('koa')
 const router = require('koa-router')()
 
 const app = koa()
 
-function helper(text) {
-  return `Hello ${text}`
-}
-
-router.get('/:param?', function* () {
-  if (this.params && this.params.param) {
-    this.body = {
-      content: helper(this.params.param),
-    }
-  } else {
-    this.body = {
-      content: helper('World'),
-    }
-  }
+const glob = require('glob')
+glob.sync(path.resolve(process.cwd(), './src/routes/*.js')).forEach((route) => {
+  console.log(route)
+  require(route)(router)
 })
 
 app
   .use(router.routes())
   .use(router.allowedMethods())
 
-export default app
+module.exports = app
