@@ -10,7 +10,8 @@
     "node": ">=6"
   },
   "scripts": {
-    "start": "node --harmony app.js",
+    "dev": "supervisor --quiet --watch src --no-restart-on exit --exec node app.js",
+    "start": "node app.js",
     "deploy": "gcloud preview app deploy",
     "test": "echo \"No tests yet\""
   },
@@ -23,5 +24,8 @@
     "glob": "^7.0.3",
     "koa": "^1.2.0",
     "koa-router": "^5.4.0"
+  },
+  "devDependencies": {
+    "supervisor": "^0.10.0"
   }
 }
