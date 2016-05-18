@@ -1,0 +1,27 @@
+language: node_js
+node_js:
+- '6'
+
+cache:
+  directories:
+  - node_modules
+
+before_install:
+- openssl aes-256-cbc -K $encrypted_71c75b08afc8_key -iv $encrypted_71c75b08afc8_iv
+  -in client-secret.json.enc -out client-secret.json -d
+
+install:
+- npm install --loglevel=error --no-progress
+
+script:
+- npm test
+
+deploy:
+  provider: gae
+  project: svef-1140
+  keyfile: client-secret.json
+  config: app.yml
+  skip_cleanup: true
+  on:
+    branch: master
+    repo: svef/api.svef.is

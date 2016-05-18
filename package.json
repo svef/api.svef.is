@@ -1,0 +1,19 @@
+{
+  "name": "api.svef.is",
+  "description": "An example of running Koa.js",
+  "version": "0.0.1",
+  "private": true,
+  "license": "ICS",
+  "author": "Benedikt D Valdez",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "start": "node --harmony app.js",
+    "deploy": "gcloud preview app deploy",
+    "test": "echo \"No tests yet\""
+  },
+  "dependencies": {
+    "koa": "^1.1.2"
+  }
+}
