@@ -1,10 +1,11 @@
 {
   "name": "api.svef.is",
-  "description": "An example of running Koa.js",
   "version": "0.0.1",
+  "description": "The official SVEF API",
   "private": true,
   "license": "ICS",
-  "author": "Benedikt D Valdez",
+  "author": "Benedikt D Valdez <benediktvaldez@gmail.com>",
+  "contributors": [],
   "engines": {
     "node": ">=6"
   },
@@ -13,6 +14,11 @@
     "deploy": "gcloud preview app deploy",
     "test": "echo \"No tests yet\""
   },
+  "repository": "svef/api.svef.is",
+  "bugs": {
+    "url": "https://github.com/svef/api.svef.is/issues"
+  },
+  "homepage": "https://github.com/svef/api.svef.is#readme",
   "dependencies": {
     "koa": "^1.2.0",
     "koa-router": "^5.4.0"
