@@ -1,27 +1,15 @@
 language: node_js
 node_js:
 - '6'
-
 cache:
   directories:
   - node_modules
-
-before_install:
-- openssl aes-256-cbc -K $encrypted_71c75b08afc8_key -iv $encrypted_71c75b08afc8_iv
-  -in client-secret.json.enc -out client-secret.json -d
-
 install:
 - npm install --loglevel=error --no-progress
-
 script:
 - npm test
-
 deploy:
-  provider: gae
-  project: svef-1140
-  keyfile: client-secret.json
-  config: app.yml
-  skip_cleanup: true
-  on:
-    branch: master
-    repo: svef/api.svef.is
+  provider: heroku
+  app: api-svef-is
+  api_key:
+    secure: iQpHgTuCNtL0YVLLWHJ2Vo+XK5/VhPskc1y9c1CqwhdvBtRzvFIE0/5+NwhWBjhf7tgZXZshqiNBtmRd0ofpZBCGnXUpbAWbpKohAtOPR1xLLCE2onViE9HpE/1P7vv8bh9R/C8goHGsn35cQELAinEY6rDeT61ZdS3e63mhnPZp8Y+bmSaZCadBK6ldVh/9Ogm/giH+DZjrXxB22/vl3IgY8NIDdqte1Vy1Cm7qziGmjdkXiy2lxqHkSUZkRURM2kUT6eML7p731zY8CH9GytQXS51FzOW95sZS2SiQjxQM0SOrwjJ6ULDsnrb0NKqzwTCiZDCDX5lnElBiR8WSwpv7hGaWLSDfgsAZ5yHVbSRI96Acy9HmyFmbXLAkp32ahHZ1eyo5nVYGSEZNeKOSP38rLTCdTje3XdwFihVwjoDGSyxxtAYoa2ygDlcbVR1aYUS4RYJ94IkA+oO7ovwDTz6X/3j7tdEF1b9aueJ1xtRG1GayF/b1rwu7jGLT9L5noaaInKJi0qx/O7V8clxtwVovpVF1s8d/OiGYjtSXWogKRZBCvJehvZ3gDkmtyuEsTbFx25r4srWPWIpZ/TJbx2/sJShMjyAqNOqCXt1Qgb7+YwL5lMfbkac5dMAc/qe2bl7dvJdB7hsIB7w3g8yEqvPYNEZzTaGkXfWEBJ5ai7k=
