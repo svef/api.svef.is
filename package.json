@@ -23,7 +23,8 @@
   "dependencies": {
     "glob": "^7.0.3",
     "koa": "^1.2.0",
-    "koa-router": "^5.4.0"
+    "koa-router": "^5.4.0",
+    "node-fetch": "^1.5.2"
   },
   "devDependencies": {
     "eslint": "^2.10.2",
