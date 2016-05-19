@@ -1,4 +1,3 @@
-const fetch = require('node-fetch')
 const { get } = require('axios')
 
 module.exports = (router) => {
