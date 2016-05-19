@@ -23,6 +23,7 @@
   "dependencies": {
     "axios": "^0.11.1",
     "glob": "^7.0.3",
+    "kcors": "^1.2.1",
     "koa": "^1.2.0",
     "koa-bodyparser": "^2.2.0",
     "koa-router": "^5.4.0",
