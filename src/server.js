@@ -1,6 +1,7 @@
 const path = require('path')
 const koa = require('koa')
 const router = require('koa-router')()
+const bodyParser = require('koa-bodyparser')
 const glob = require('glob')
 
 const app = koa()
@@ -9,6 +10,7 @@ const app = koa()
 glob.sync(path.resolve(process.cwd(), './src/routes/*.js')).forEach((route) => require(route)(router))
 
 app
+  .use(bodyParser())
   .use(router.routes())
   .use(router.allowedMethods())
 

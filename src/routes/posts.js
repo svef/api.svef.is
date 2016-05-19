@@ -1,11 +1,10 @@
 const fetch = require('node-fetch')
+const { get } = require('axios')
 
 module.exports = (router) => {
   router.get('/posts', function* () {
-    console.log('sending request')
-    const data = yield fetch('https://medium.com/vefidnadurinn/latest?format=json')
-    const text = yield data.text()
-    const json = JSON.parse(text.substr('])}while(1);</x>'.length))
+    const { data } = yield get('https://medium.com/vefidnadurinn/latest?format=json')
+    const json = JSON.parse(data.substr('])}while(1);</x>'.length))
     this.body = json.payload.posts.map((post) => {
       return {
         title: post.title,
