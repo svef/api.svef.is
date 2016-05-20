@@ -8,7 +8,7 @@ const glob = require('glob')
 const app = koa()
 
 // eslint-disable-next-line global-require
-glob.sync(path.resolve(process.cwd(), './src/routes/*.js')).forEach((route) => require(route)(router))
+glob.sync(path.resolve(process.cwd(), './server/routes/*.js')).forEach((route) => require(route)(router))
 
 app
   .use(cors())
